@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.param('model', (req, res, next) => {
   const modelName = req.params.model;
-  if (dataModules[modelName]) {
+  if (['food', 'clothes'].includes(modelName)) {
     req.model = dataModules[modelName];
     next();
   } else {

@@ -14,9 +14,20 @@ module.exports = function (err, req, res, next) {
   // Sometimes, errors come in as an object, others as a string
   const error = err.message ? err.message : err;
 
+  let status = err.status || err.statusCode || 500;
+
+  if (error === 'Invalid Login') {
+    status = 401;
+  }
+
+  if (error === 'Access Denied') {
+    status = 403;
+  }
+
   const errorObject = {
-    status: 500,
+    status: status,
     message: error
   };
-  res.status(500).json(errorObject);
+
+  res.status(status).json(errorObject);
 };
