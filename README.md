@@ -101,6 +101,7 @@ Run the automated test suite:
 npm test -- --runInBand
 ```
 
+
 The Jest and Supertest suite covers authentication, JWT protection, authorization, and protected CRUD operations.
 
 Latest verified result: **10 tests passing**, with **80.82% statement coverage**.
@@ -108,6 +109,12 @@ Latest verified result: **10 tests passing**, with **80.82% statement coverage**
 ## Error Handling
 
 The API includes error-handling middleware for invalid requests, unauthorized access, forbidden operations, and server errors.
+
+## UML Diagram
+
+The following diagram illustrates the Lab 8 Auth API architecture, including authentication, authorization, CRUD routes, and the shared database.
+
+![Lab 8 Auth API UML Diagram](./docs/uml.png)
 
 ## Author
 
